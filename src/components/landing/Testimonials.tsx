@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
+import avatarSarah from "@/assets/avatar-sarah.jpg";
+import avatarMarcus from "@/assets/avatar-marcus.jpg";
+import avatarPriya from "@/assets/avatar-priya.jpg";
 
 const testimonials = [
   {
@@ -7,21 +10,21 @@ const testimonials = [
     name: "Sarah Chen",
     title: "VP of Engineering",
     company: "TechFlow Inc.",
-    initials: "SC",
+    avatar: avatarSarah,
   },
   {
     quote: "We interviewed 200+ candidates in a month with InterviewAI. The AI caught red flags we would have missed and highlighted star performers we almost passed on. Game-changer.",
     name: "Marcus Rodriguez",
     title: "Head of Talent",
     company: "DataForge Labs",
-    initials: "MR",
+    avatar: avatarMarcus,
   },
   {
     quote: "The multi-lingual support is incredible. We hire globally and InterviewAI conducts interviews in Spanish, French, and Hindi flawlessly. Saved us thousands in translator costs.",
     name: "Priya Patel",
     title: "Global Recruiting Lead",
     company: "InnovateTech",
-    initials: "PP",
+    avatar: avatarPriya,
   },
 ];
 
@@ -55,16 +58,19 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-card border border-border rounded-2xl p-8 md:p-10 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              whileHover={{ y: -6, boxShadow: "0 25px 50px -12px rgba(99, 102, 241, 0.15)" }}
+              className="bg-card border border-border rounded-2xl p-8 md:p-10 transition-all duration-300"
             >
               <span className="text-6xl leading-none text-primary/20 font-serif">"</span>
               <p className="text-lg text-foreground/80 leading-relaxed mb-6 -mt-4">
                 {t.quote}
               </p>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full gradient-primary flex items-center justify-center text-primary-foreground font-bold text-sm">
-                  {t.initials}
-                </div>
+                <img
+                  src={t.avatar}
+                  alt={t.name}
+                  className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/20"
+                />
                 <div>
                   <p className="font-semibold text-foreground">{t.name}</p>
                   <p className="text-sm text-muted-foreground">
