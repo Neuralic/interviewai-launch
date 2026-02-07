@@ -104,7 +104,7 @@ const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
+          transition={{ duration: 0.7, delay: 0.3 }}
           className="flex-1 relative w-full max-w-xl"
         >
           <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/20 border border-border/50">

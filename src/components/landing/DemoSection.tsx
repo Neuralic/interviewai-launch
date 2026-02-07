@@ -35,10 +35,10 @@ const DemoSection = () => {
           className="rounded-3xl overflow-hidden shadow-2xl shadow-primary/50 mx-auto max-w-3xl"
         >
           <video
-            controls
+            autoPlay
             muted
+            loop
             playsInline
-            poster=""
             className="w-full aspect-video object-cover"
             src="/videos/demo-video.mp4"
           />
